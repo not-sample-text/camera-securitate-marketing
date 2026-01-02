@@ -1,0 +1,290 @@
+/* IMPORT FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap");
+
+/* VARIABLES */
+:root {
+	--red: #e10600;
+	--yellow: #ffd100;
+	--blue-dark: #071a33;
+	--blue-mid: #0b2a4f;
+	--white: #ffffff;
+	--gray: #1c1c1c;
+}
+
+/* RESET */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Montserrat", sans-serif;
+	color: var(--white);
+	background: linear-gradient(135deg, var(--blue-dark), var(--blue-mid));
+	line-height: 1.6;
+	overflow-x: hidden; /* Previne scroll orizontal nedorit */
+}
+
+/* NAV */
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1.5rem 3rem;
+	position: absolute; /* Navbar transparent peste hero */
+	width: 100%;
+	z-index: 10;
+}
+
+.logo {
+	font-weight: 800;
+	letter-spacing: 2px;
+	font-size: 1.2rem;
+	text-transform: uppercase;
+}
+
+.nav-links {
+	list-style: none;
+	display: flex;
+	gap: 2rem;
+}
+
+.nav-links a {
+	text-decoration: none;
+	color: var(--white);
+	font-weight: 600;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+	color: var(--yellow);
+}
+
+/* HERO */
+.hero {
+	position: relative;
+	min-height: 100vh;
+	display: flex; /* Centrare verticală */
+	align-items: center;
+	background: linear-gradient(135deg, var(--blue-dark) 55%, var(--red) 55%);
+	clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+/* Overlay subtil pentru textură */
+.hero::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(135deg, transparent 65%, rgba(0, 0, 0, 0.3) 65%);
+	pointer-events: none;
+}
+
+.hero-content {
+	position: relative;
+	max-width: 650px;
+	padding: 6rem 3rem;
+	z-index: 2;
+}
+
+.hero-content h1 {
+	font-size: 3.5rem;
+	font-weight: 800;
+	line-height: 1.1;
+	margin-bottom: 1rem;
+	text-transform: uppercase;
+	font-style: italic; /* Stil sportiv */
+}
+
+.hero-content p {
+	margin-bottom: 2rem;
+	color: #d0d6df;
+	font-size: 1.1rem;
+}
+
+.hero-content .motto {
+	font-weight: 800;
+	font-size: 1.2rem;
+	letter-spacing: 1px;
+	margin-bottom: 1rem;
+}
+
+.hero-content .vision {
+	color: var(--yellow);
+}
+
+/* BUTTONS */
+.btn-primary,
+.btn-secondary {
+	display: inline-block;
+	padding: 1rem 2.5rem;
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
+	text-decoration: none;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-primary {
+	background: var(--red);
+	color: var(--white);
+	box-shadow: 0 4px 15px rgba(225, 6, 0, 0.4);
+}
+
+.btn-primary:hover {
+	transform: translateY(-3px);
+	background: #c00500;
+}
+
+.btn-secondary {
+	background: transparent;
+	color: var(--white);
+	border: 2px solid var(--white);
+}
+
+.btn-secondary:hover {
+	background: var(--white);
+	color: var(--red);
+}
+
+/* SECTIONS */
+.section {
+	padding: 6rem 3rem;
+}
+
+/* FEATURES */
+.features {
+	background: linear-gradient(135deg, #060e1a, #0b1f3a);
+	/* Ajustat clip-path pentru a se îmbina mai bine */
+	margin-top: -5rem;
+	padding-top: 10rem;
+	padding-bottom: 8rem;
+	clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 95%);
+}
+
+.features h2,
+.tech h2,
+.cta h2 {
+	font-size: 2.5rem;
+	font-weight: 800;
+	margin-bottom: 3rem;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+.feature-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	gap: 2rem;
+}
+
+.card {
+	background: rgba(10, 19, 34, 0.8);
+	padding: 2.5rem;
+	border-left: 5px solid var(--yellow);
+	font-weight: 600;
+	font-size: 1.1rem;
+	transition: transform 0.3s ease;
+}
+
+.card:hover {
+	transform: translateX(10px);
+	background: rgba(15, 25, 45, 1);
+}
+
+/* TECH */
+.tech {
+	background: linear-gradient(135deg, #08162b, #0e2b4f);
+	padding-top: 4rem;
+}
+
+.tech p {
+	max-width: 700px;
+	margin-bottom: 3rem;
+	font-size: 1.2rem;
+	opacity: 0.9;
+}
+
+.tech-stats {
+	display: flex;
+	gap: 4rem;
+	flex-wrap: wrap;
+}
+
+.tech-stats div {
+	font-weight: 600;
+}
+
+.tech-stats span {
+	display: block;
+	font-size: 3rem;
+	color: var(--red);
+	font-weight: 800;
+	line-height: 1;
+	margin-bottom: 0.5rem;
+}
+
+/* CTA */
+.cta {
+	background: linear-gradient(135deg, var(--red), #8b0000);
+	text-align: center;
+	padding: 8rem 2rem;
+}
+
+.cta p {
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/* FOOTER */
+.footer {
+	background: #000;
+	text-align: center;
+	padding: 3rem 2rem;
+	font-size: 0.8rem;
+	color: #888;
+}
+
+/* MOBILE RESPONSIVE TWEAKS */
+@media (max-width: 768px) {
+	.nav {
+		flex-direction: column;
+		gap: 1rem;
+		padding: 1.5rem;
+		position: relative; /* Pe mobil scoatem absolute pentru a nu suprapune textul */
+	}
+
+	.hero-content h1 {
+		font-size: 2.5rem;
+	}
+
+	.hero {
+		background: linear-gradient(
+			135deg,
+			var(--blue-dark),
+			var(--blue-mid)
+		); /* Simplificăm fundalul pe mobil */
+		min-height: auto;
+	}
+
+	.section {
+		padding: 4rem 1.5rem;
+	}
+
+	.features {
+		margin-top: 0;
+		padding-top: 4rem;
+		clip-path: none; /* Scoatem formele complexe pe ecrane mici */
+	}
+
+	.tech-stats {
+		gap: 2rem;
+	}
+}
