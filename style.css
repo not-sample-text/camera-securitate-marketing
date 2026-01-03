@@ -115,6 +115,24 @@ body {
 	color: var(--yellow);
 }
 
+.hero-image {
+  flex-grow: 1; /* Permite imaginii să ocupe spațiul rămas */
+  display: flex;
+  justify-content: flex-start; /* Aliniază imaginea la stânga */
+  align-items: center; /* Aliniază imaginea la baza secțiunii hero */
+  padding-right: 0rem; /* Remove padding right */
+  margin-left: 2rem; /* Move it to the left */
+  z-index: 1;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  max-height: 750px; /* Make it larger */
+  margin-bottom: 0; /* Trage imaginea puțin în jos pentru a se suprapune */
+  filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.5)); /* Adaugă umbră */
+}
+
 /* BUTTONS */
 .btn-primary,
 .btn-secondary {
@@ -272,6 +290,10 @@ body {
 			var(--blue-mid)
 		); /* Simplificăm fundalul pe mobil */
 		min-height: auto;
+	}
+
+	.hero-image {
+		display: none; /* Ascunde imaginea pe mobil */
 	}
 
 	.section {
