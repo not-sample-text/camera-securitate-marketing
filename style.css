@@ -3,12 +3,12 @@
 
 /* VARIABLES */
 :root {
-	--red: #e10600;
-	--yellow: #ffd100;
-	--blue-dark: #071a33;
-	--blue-mid: #0b2a4f;
-	--white: #ffffff;
-	--gray: #1c1c1c;
+	--red: rgb(225, 6, 0);
+	--yellow: rgb(255, 209, 0);
+	--blue-dark: rgb(7, 26, 51);
+	--blue-mid: rgb(11, 42, 79);
+	--white: rgb(255, 255, 255);
+	--gray: rgb(28, 28, 28);
 }
 
 /* RESET */
@@ -36,9 +36,21 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	padding: 1.5rem 3rem;
-	position: absolute;
+	position: fixed;
+	top: 0;
 	width: 100%;
 	z-index: 10;
+	background: rgba(7, 26, 51, 0.8);
+	backdrop-filter: blur(10px);
+	transition: transform 0.3s ease;
+}
+
+.nav.nav-hidden {
+	transform: translateY(-100%);
+}
+
+.nav.nav-visible {
+	transform: translateY(0);
 }
 
 .logo {
@@ -93,12 +105,11 @@ body {
 }
 
 .hero-content h1 {
-	font-size: 3.5rem;
+	font-size: 2rem;
 	font-weight: 800;
 	line-height: 1.1;
 	margin-bottom: 1rem;
-	text-transform: uppercase;
-	font-style: italic;
+	letter-spacing: 1px;
 }
 
 .hero-content p {
@@ -109,9 +120,11 @@ body {
 
 .hero-content .motto {
 	font-weight: 800;
-	font-size: 1.2rem;
-	letter-spacing: 1px;
+	font-size: 3.5rem;
+	line-height: 1.1;
 	margin-bottom: 1rem;
+	text-transform: uppercase;
+	font-style: italic;
 }
 
 .hero-content .vision {
